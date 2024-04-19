@@ -6,6 +6,9 @@ import 'screens/authentication_screen.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 
+// Entry point of the application
+
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

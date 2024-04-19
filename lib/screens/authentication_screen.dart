@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/rendering.dart';
+import './happy_screen.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   @override
@@ -23,9 +24,10 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             );
           },
         );
+      } else {
+        return HappyScreen();
       }
-      return Container();
     });
-   
   }
 }
+

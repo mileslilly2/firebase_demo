@@ -1,18 +1,33 @@
+// This block is for configuring the buildscript, not the modules
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        // Other repositories if necessary
+    }
+    
+    dependencies {
+        classpath 'com.google.gms:google-services:4.4.1' // This should be here
+        // Other classpath dependencies as necessary
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+        // Other repositories if necessary
     }
 }
 
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+// There should NOT be a dependencies block here at the root level
